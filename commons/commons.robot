@@ -11,10 +11,12 @@ Enable Proxy Privacy
 
 Convert Price To Number
     [Arguments]     ${price_selected}
-    ${price_without_dollar}=    Replace String    ${price_selected}    $    ${EMPTY}
-    ${price_without_comma}=    Replace String    ${price_without_dollar}    ,    ${EMPTY}
-    ${cleaned_number}=    Convert To Number    ${price_without_comma}
-    ${formatted_number}=    Evaluate    "{:,}".format(${cleaned_number})
+    ${price_number_actual_cleaned} =    Evaluate    re.sub(r'[^0-9.]', '', '${price_selected}')
+    ${formatted_number}=    Convert To Number    ${price_number_actual_cleaned}
     Log    Formatted Number: ${formatted_number}
     RETURN    ${formatted_number}
 
+Load Test Case Data From YAML
+    [Arguments]     ${testcase_id}
+    ${test_data}    Get From Dictionary    ${TestCases}    ${testcase_id}
+    RETURN          ${test_data}

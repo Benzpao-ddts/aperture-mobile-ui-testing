@@ -27,7 +27,8 @@ Verify Price Is Within Expected Range
     ${price_actual}=        Get Text        ${PRICE_ITEM_DETAILS}       text
     Log     Price Actual displayed: ${price_actual}
     ${price_number_actual}=        commons.Convert Price To Number     ${price_actual}
-    Should Be True    ${price_number_actual} < ${price_selected}    expected '${price_number_actual}' should be less than '${price_selected}'
+    ${price_selected_number}=    Convert To Number    ${price_selected}
+    Should Be True    ${price_number_actual} < ${price_selected_number}    expected '${price_number_actual}' should be less than '${price_selected_number}'
 
 Verify Bed Rooms Is Equal Expected
     [Arguments]     ${bedrooms_selected}

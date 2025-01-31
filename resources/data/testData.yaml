@@ -1,0 +1,51 @@
+TestCases:
+  TC001:
+    description: Retrieve Broker's Phone Number – End-to-End Verification
+    search_location: "Ottawa"
+    max_dropdown: "max"
+    min_dropdown: "none"
+    price_max: "800000"
+    price_min: "450000"
+    add_bedrooms: "3+"
+    decrease_bedrooms: null
+    option_property_type: "Residential"
+  TC002:
+    description: Verify Adding a Bedroom to Property Listing
+    search_location: "Ottawa"
+    max_dropdown: null
+    min_dropdown: null
+    price_max: null
+    price_min: null
+    add_bedrooms: "3+"
+    decrease_bedrooms: null
+    option_property_type: null
+  TC003:
+    description: Verify Decreasing the Bedroom Count in Property Listing
+    search_location: "Ottawa"
+    max_dropdown: null
+    min_dropdown: null
+    price_max: null
+    price_min: null
+    add_bedrooms: "3+"
+    decrease_bedrooms: "2"
+    option_property_type: null
+  TC004:
+    description: Validate Minimum Price Range in Dropdown List
+    search_location: "Ottawa"
+    max_dropdown: "max"
+    min_dropdown: null
+    price_max: null
+    price_min: "450000"
+    add_bedrooms: null
+    decrease_bedrooms: null
+    option_property_type: null
+  TC005:
+    description: Validate Maximum Price Range in Dropdown List
+    search_location: "Ottawa"
+    max_dropdown: "max"
+    min_dropdown: null
+    price_max: "800000"
+    price_min: null
+    add_bedrooms: null
+    decrease_bedrooms: null
+    option_property_type: null

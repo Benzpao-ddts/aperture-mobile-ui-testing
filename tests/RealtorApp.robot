@@ -22,16 +22,16 @@ End To End Testing Retrieve Broker's Phone Number
     commons.Enable Proxy Privacy
     searchLocation.Search For Item      ${test_data['search_location']}  # to config in data test
     searchLocation.Wait For Search Suggestion List To Be Visible
-#    ${all_items}=       searchLocation.Verify Suggestion List Contains Entered Search Item      ${test_data['search_location']}
+    ${all_items}=       searchLocation.Verify Suggestion List Contains Entered Search Item      ${test_data['search_location']}
     #This step was commented out because when I use random selection, no results are displayed.
 #    searchLocation.Select Random Item From Location Suggestion List      ${all_items}
     searchLocation.Select The First Locations On Suggestion
     searchLocation.Wait For Horizontal View Icon To Be Visible
-#    searchLocation.Navigate To Search Filter Page
-#    searchFiltering.Select Price Range      ${test_data['max_dropdown']}       ${test_data['price_max']}
-#    searchFiltering.Add Bed Room Until Expected Value Is Found      ${test_data['add_bedrooms']}
-#    searchFiltering.Select Options From Property Type Section       ${test_data['option_property_type']}
-#    searchFiltering.Click Result Button To Search
+    searchLocation.Navigate To Search Filter Page
+    searchFiltering.Select Price Range      ${test_data['max_dropdown']}       ${test_data['price_max']}
+    searchFiltering.Add Bed Room Until Expected Value Is Found      ${test_data['add_bedrooms']}
+    searchFiltering.Select Options From Property Type Section       ${test_data['option_property_type']}
+    searchFiltering.Click Result Button To Search
     searchLocation.Navigate To Item Details Page
     itemDetails.Verify Price Is Within Expected Range       ${test_data['price_max']}
     itemDetails.Verify Bed Rooms Is Equal Expected          ${test_data['add_bedrooms']}
